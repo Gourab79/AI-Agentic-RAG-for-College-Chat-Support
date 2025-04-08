@@ -1,5 +1,5 @@
-##🎓 College Assistant AI Agent
-##An intelligent AI-powered assistant built using Streamlit, MongoDB, Groq LLMs, and Sentence Transformers to help answer queries related to college documents and student grades. It processes .docx and .csv files, embeds ##their content, and allows users to interact with the information through natural language questions.
+🎓 College Assistant AI Agent
+An intelligent AI-powered assistant built using Streamlit, MongoDB, Groq LLMs, and Sentence Transformers to help answer queries related to college documents and student grades. It processes .docx and .csv files, embeds their content, and allows users to interact with the information through natural language questions.
 
 🚀 Features
 📄 Supports .docx and .csv documents
