@@ -69,12 +69,13 @@ def chunk_text(text: str, chunk_size: int = 1000, chunk_overlap: int = 200) -> L
 def load_and_embed_documents():
     with st.spinner("Processing documents..."):
         collection.delete_many({})
-        
+        # Modify to add your own files
         FILE_PATHS = [
             r"C:\\Users\\chakr\\OneDrive\\Desktop\\Replaice Project\\data\\college_docs\\college_details.docx",
             r"C:\\Users\\chakr\\OneDrive\\Desktop\\Replaice Project\\data\\college_docs\\teachers.docx",
-            r"C:\\Users\\chakr\\OneDrive\\Desktop\\Replaice Project\\data\\students_results.csv",
-            r"C:\Users\chakr\OneDrive\Desktop\Replaice Project\data\college_docs\student_story.docx"
+            r"C:\Users\chakr\OneDrive\Desktop\Replaice Project\data\college_docs\student_story.docx",
+            #A csv file with Student ID and Course Name for verification
+            r"C:\\Users\\chakr\\OneDrive\\Desktop\\Replaice Project\\data\\students_results.csv"
         ]
         
         for file_path in FILE_PATHS:
