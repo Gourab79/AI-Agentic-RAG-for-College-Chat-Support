@@ -1,0 +1,89 @@
++-----------------------------+
+|       Start Application      |
++-----------------------------+
+            |
+            v
++-----------------------------+
+| Initialize Services         |
+| - MongoDB Client            |
+| - SentenceTransformer Model |
+| - Groq API Client           |
++-----------------------------+
+            |
+            v
++-----------------------------+
+| Load and Embed Documents    |
+| - Process .docx, .csv files |
+| - Chunk Text                |
+| - Generate Embeddings       |
+| - Store in MongoDB          |
++-----------------------------+
+            |
+            v
++-----------------------------+
+| Create Vector Search Index  |
+| - Drop Existing Index       |
+| - Define New Index (384-dim)|
+| - Use Cosine Similarity     |
++-----------------------------+
+            |
+            v
++-----------------------------+
+| Streamlit UI Initialization |
+| - Set Page Title/Layout     |
+| - Initialize Chat History   |
++-----------------------------+
+            |
+            v
++-----------------------------+
+| User Asks a Question         |
+| - Input via Text Field       |
++-----------------------------+
+            |
+            v
++-----------------------------+
+| Is Question About Grades?   |
+| - Use Groq to Analyze Query |
+| - If Yes, Show Grade Form   |
++-----------------------------+
+        |             |
+        | Yes         | No
+        v             v
++-----------------+   +-----------------------------+
+| Grade Lookup    |   | Retrieve Relevant Documents |
+| - Student ID    |   | - Query MongoDB Atlas       |
+| - Course Name   |   | - Get Top-K Results         |
++-----------------+   +-----------------------------+
+        |                         |
+        v                         v
++-----------------+   +-----------------------------+
+| Display Grade   |   | Generate Initial Answer     |
+| - From CSV Data |   | - Use Groq with Context     |
++-----------------+   +-----------------------------+
+                                    |
+                                    v
+                        +-----------------------------+
+                        | Verify and Refine Answer    |
+                        | - Use Groq for Fact-Checking|
+                        | - Correct/Enhance if Needed |
+                        +-----------------------------+
+                                    |
+                                    v
+                        +-----------------------------+
+                        | Display Final Response      |
+                        | - Show Verified Answer      |
+                        | - Optional: Show Sources    |
+                        +-----------------------------+
+                                    |
+                                    v
+                        +-----------------------------+
+                        | Update Chat History         |
+                        | - Append Q&A to History     |
+                        +-----------------------------+
+                                    |
+                                    v
+                        +-----------------------------+
+                        | End Session or Continue     |
+                        | - Exit on "exit" Command    |
+                        | - Loop Back for Next Query  |
+                        +-----------------------------+
