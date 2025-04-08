@@ -22,3 +22,5 @@
 
 🔒 Secure API usage with environment variables
 
+## Working Diagram:![diagram-export-4-3-2025-10_47_21-PM](https://github.com/user-attachments/assets/8fec56f2-9b0e-4a7a-94fe-bf1c1539e207)
+
